@@ -1,0 +1,98 @@
+# node js
+
+nodejs 是一个开源的服务器环境
+
+nodejs 是免费的
+
+nodejs 可以在各种平台上运行,跨操作系统
+
+nodejs 在服务器上使用javascript
+
+# 为什么使用nodejs
+
+! nodejs 使用异步编程
+
+在后端语言中(php,asp) 处理请求的方式:
+	将任务发送到计算机的文件系统,
+	然后文件系统打开时等待并读取文件
+	再将内容返回给客户端
+	最后准备处理下一个请求
+
+nodejs的处理文件请求的方式:
+	将任务发送到计算机的文件系统
+	然后准备好处理下一个请求
+	当文件系统打开并读取文件时,服务器将内容返回给客户端
+
+	#nodejs消除了等待,并继续下一个请求
+	#nodejs运行单线程,非阻塞,异步编程,所以非常节省内存
+
+nodejs 可以做什么
+
+	1 生成动态页面内容
+	2 在服务器上创建,打开,读取,写入,删除和关闭文件
+	3 可以收集表单数据
+	4 可以添加,删除,修改数据库中的数据
+
+nodejs 文件
+
+	nodejs 文件包含将在某些事件上执行的任务
+	典型的事件是有人试图访问服务器上的端口
+	必须在服务器上启动nodejs文件才能生效
+	nodejs文件的扩展名为.js
+
+nodejs 模块
+
+	#内置模块
+		nodejs有一组内置模块,无需进一步安装即可使用
+
+		{
+			assert: "",
+			buffer: "",
+			child_process: "",
+			cluster: "",
+			crypto: "",
+			dgram: "",
+			dns: "",
+			domain: "",
+			events: "",
+			fs: "",
+			http: "",
+			https: "",
+			net: "",
+			os: "",
+			path: "",
+			punycode: "",
+			querystring: "",
+			readline: "",
+			stream: "",
+			string_decoder: "",
+			timers: "",
+			tls: "",
+			tty: "",
+			url: "",
+			util: "",
+			v8: "",
+			vm: "",
+			zlib: ""
+		}
+	#引入模块
+
+	通过使用require()方法 包含模块
+
+	sam: 
+		var http = require('http');
+
+	然后应用程序可以访问http模块, 并且创建服务器
+		http.createServer(function(req, res){
+			res.wirteHead(200, {'Content-Type': 'text/html'});
+			res.end('Hello Nodejs');
+		}).listen(80);
+
+	#创建自己的模块
+		nodejs中可以创建自己的自定义模块
+		并且引入模块
+
+		sam:
+			exports.myDateTime = function(){
+				return Date();
+			};

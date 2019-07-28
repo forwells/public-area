@@ -1,0 +1,6 @@
+#MariaDB 的zip安装包安装 (msi安装方式放弃)
+	#安装
+		在MariaDB 5.2.6之前可以使用 mysqld --console安装
+
+		在 version > 5.2.6 版本后 官网推荐使用 mysql_install_db.exe 安装数据库(更为安全方便的方式)
+
