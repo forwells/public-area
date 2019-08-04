@@ -46,34 +46,34 @@ nodejs 模块
 		nodejs有一组内置模块,无需进一步安装即可使用
 
 		{
-			assert: "",
-			buffer: "",
-			child_process: "",
-			cluster: "",
-			crypto: "",
-			dgram: "",
-			dns: "",
-			domain: "",
-			events: "",
-			fs: "",
-			http: "",
-			https: "",
-			net: "",
-			os: "",
-			path: "",
-			punycode: "",
-			querystring: "",
-			readline: "",
-			stream: "",
-			string_decoder: "",
-			timers: "",
-			tls: "",
-			tty: "",
-			url: "",
-			util: "",
-			v8: "",
-			vm: "",
-			zlib: ""
+			assert: "提供一组断言(自信~推断)测试",
+			buffer: "处理二进制数据",
+			child_process: "运行子进程",
+			cluster: "将单个node进程拆分为多个进程",
+			crypto: "处理OpenSSL加密功能",
+			dgram: "提供UDP数据报套接字的实现",
+			dns: "执行DNS查找和名称解析功能",
+			domain: "已过时。 处理未处理的错误",
+			events: "处理事件",
+			fs: "处理文件系统",
+			http: "使Node.js充当HTTP服务器",
+			https: "使Node.js充当HTTPS服务器",
+			net: "创建服务器和客户端",
+			os: "提供有关操作系统的信息",
+			path: "处理文件路径",
+			punycode: "字符编码方案",
+			querystring: "处理URL查询字符串",
+			readline: "要在当时处理一行可读流",
+			stream: "处理流数据",
+			string_decoder: "将缓冲区对象解码为字符串",
+			timers: "在给定的毫秒数后执行函数",
+			tls: "实现TLS和SSL协议",
+			tty: "提供文本终端使用的类",
+			url: "解析URL字符串",
+			util: "访问实用程序功能",
+			v8: "访问有关V8引擎的信息",
+			vm: "在虚拟机中编译JavaScript代码",
+			zlib: "压缩或者解压缩文件"
 		}
 	#引入模块
 
@@ -96,3 +96,43 @@ nodejs 模块
 			exports.myDateTime = function(){
 				return Date();
 			};
+
+	#作为文件服务器
+	 var fs = require('fs');
+	 	##文件系统的常用方法
+	 		-- 读取文件
+	 		-- 创建文件
+	 		-- 更新文件
+	 		-- 删除文件
+	 		-- 重命名文件
+
+	#url 路由模块
+
+	#npm
+		npm是node.js 包或者模块的包管理器
+		www.npmjs.com 提供数以千计的免费软件包提供下载和使用
+
+		安装node.js的时候会自动在计算机上安装npm程序(md, php就不会)
+
+		## npm速度问题
+			--npm 更换 阿里镜像
+				npm config set registry https://registry.npm.taobao.org/
+
+			--获取当前npm镜像配置 
+				npm config get registry
+
+	#event 事件模块
+		##计算机上的每个操作都是一个事件,就像建立连接或者打开文件一样
+		##node.js中的对象可以触发事件, 如:readStream对象再打开和关闭文件时触发事件
+
+		##
+			node js有一个内置模块, 称为"事件" , 我们可以在其中创建,出发和监听自己的事件
+			所有事件属性都是eventEmitter对象的实例,
+			为了能够访问这些属性和方法, 需要创建一个EventEmitter对象
+			可以使用EventEmitter对象将事件处理程序分配给自己的事件
+			要触发事件 需要使用emit()方法
+	#上传文件
+		node 有一个非常好用的文件上传模块 叫 Formidable(我查了查 叫强大?)
+		下载了Formidable后 可以在任何程序中包含此模块
+
+		

@@ -1,6 +1,6 @@
 // 调用nodejs - http 模块
 const http = require('http');
-
+var testmodule = require('./foo');
 // 定义域名
 const hostname = 'node.test';
 
@@ -8,15 +8,9 @@ const hostname = 'node.test';
 const port = 80;
 
 // 定义服务
-const server = http.createServer(
-	(request, result) => {
-		result.statusCode = 200;
-		result.setHeader('Content-Type', 'text/plain');
-		result.end('Hello, Node js');
-	}
-);
-
-
-server.listen(port, hostname, () => {
-	console.log(`the server is running on http://${hostname}:${port}`);
-});
+http.createServer(function(req, res){
+	res.writeHead(200, {'Content-Type': 'text/html'});
+	res.write("<meta charset=\"UTF-8\"/>");
+	res.write("我的第一个nodejs模块:" + testmodule.myModule());
+	res.end();
+}).listen(80);
