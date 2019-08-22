@@ -1,4 +1,4 @@
-#3rd Party Dispute API
+# 3rd Party Dispute API
 
 > ###生成PayPal-Auth-Assertion标头
 > nodejs 方式生成
